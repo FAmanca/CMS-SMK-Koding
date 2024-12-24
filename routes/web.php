@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 
@@ -10,6 +11,12 @@ Route::get('/', function () {
         'articles' => Post::all(),
     ]);
 })->name('home');
+
+// AUTH
+Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
+    Route::get('signup', [AuthController::class, 'signup'])->name('signup');
+    Route::get('signin', [AuthController::class, 'signin'])->name('signin');
+});
 
 // ARTICLE
 Route::group(['prefix' => 'article', 'as' => 'article.'], function () {
