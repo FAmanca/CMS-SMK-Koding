@@ -21,8 +21,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('article.create') }}">Create Article</a></li>
-                            <li><a class="dropdown-item" href="#">Manage Article</a></li>
-                            <li><a class="dropdown-item" href="#">Manage Users</a></li>
+                            <li><a class="dropdown-item" href="{{ route('article.manage') }}">Manage Article</a></li>
+                            <li><a class="dropdown-item" href="{{ route('manageuser') }}">Manage Users</a></li>
                         </ul>
                     </li>
                 @endif
