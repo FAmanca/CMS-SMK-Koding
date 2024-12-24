@@ -2,7 +2,8 @@
 
 @section('main')
     <div class="d-flex justify-content-center align-items-center vh-100">
-        <form class="w-50">
+        <form action="{{ route('auth.register') }}" method="POST" class="w-50">
+            @csrf
             <h1 class="text-center my-2">Register</h1>
             <div class="mb-3">
                 <label for="exampleInputUsername" class="form-label">Username</label>
