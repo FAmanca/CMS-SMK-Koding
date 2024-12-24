@@ -13,16 +13,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Admin Tools
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Create </a></li>
-                        <li><a class="dropdown-item" href="#">Feature 2</a></li>
-                        <li><a class="dropdown-item" href="#">Feature 3</a></li>
-                    </ul>
-                </li>
+                @if (Auth::check() && Auth::user()->role == 'admin')
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin Tools
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('article.create') }}">Create Article</a></li>
+                            <li><a class="dropdown-item" href="#">Manage Article</a></li>
+                            <li><a class="dropdown-item" href="#">Manage Users</a></li>
+                        </ul>
+                    </li>
+                @endif
                 @if (Auth::check())
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('auth.logout') }}">Logout</a>
