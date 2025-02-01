@@ -1,0 +1,221 @@
+body {
+    background-color: #f3f3f3;
+}
+
+.navcolor {
+    background-color: #606924;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #d4d4aa;
+}
+
+.nav-link {
+    color: #f0f0f0;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+}
+
+.dropdown-menu {
+    background-color: #788c35;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #9aaa4d;
+    color: #000;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: #788c35;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3e%3cpath stroke='%23fff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.home-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.home-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4a4a4a;
+    border-bottom: 3px solid #606924;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.home-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.home-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.home-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.home-card:hover img {
+    transform: scale(1.05);
+}
+
+.home-card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.home-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #343a40;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.home-card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.home-read-btn {
+    background-color: #606924;
+    color: white;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.home-read-btn:hover {
+    background-color: #788c35;
+    color: #fff;
+}
+
+.home-updated {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* DETAIL */
+
+.detail-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.detail-article {
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.detail-article:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.detail-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    border-left: 5px solid #606924;
+    padding-left: 10px;
+}
+
+.detail-meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+    transition: transform 0.3s ease;
+}
+
+.detail-image:hover {
+    transform: scale(1.03);
+}
+
+.detail-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-top: 15px;
+}
+
+.detail-sidebar {
+    background-color: #fff;
+    border-left: 4px solid #606924;
+    transition: box-shadow 0.3s ease;
+}
+
+.detail-sidebar:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-sidebar-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #606924;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.detail-related-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+.detail-related-link {
+    color: #606924;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.detail-related-link:hover {
+    color: #788c35;
+    text-decoration: underline;
+}

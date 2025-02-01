@@ -1,28 +1,24 @@
 @extends('layouts.main')
 @section('content')
-    <div class="main mt-3">
-        <h2>Artikel Terbaru</h2>
-        <div class="row">
+    <div class="container home-container my-4">
+        <h2 class="home-title">Koleksi</h2>
+        <div class="row g-4">
             @foreach ($articles as $article)
-                <div class="col-md-6">
-                    <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid rounded-start" alt="Gambar Artikel"
-                                    style="height: 100%; object-fit: cover;">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $article->judul }}</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card home-card shadow-sm">
+                        <img src="{{ asset('storage/' . $article->image) }}" class="card-img-top" alt="Gambar Artikel">
+
+                        <div class="card-body home-card-body">
+                            <h5 class="home-card-title">{{ $article->judul }}</h5>
+                            <p class="home-card-text">{{ Str::limit($article->body, 80) }}</p>
+                            <div class="mt-auto">
+                                <p class="home-updated">Last updated {{ $article->updated_at->diffForHumans() }}</p>
+                                <a href="{{ route('article.show', $article->id) }}" class="btn home-read-btn w-100">Baca Selengkapnya</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
         </div>
     </div>
 @endsection

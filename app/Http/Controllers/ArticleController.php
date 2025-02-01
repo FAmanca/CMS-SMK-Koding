@@ -17,6 +17,17 @@ class ArticleController extends Controller
         ]);
     }
 
+    public function show(Post $post) {
+        $relatedArticles = Post::where('id', '!=', $post->id)
+                              ->latest()
+                              ->take(5)
+                              ->get();
+        return view('detail',[
+            'article'=> $post,
+            'relatedArticles'=> $relatedArticles
+        ]);
+    }
+
     public function store(Request $request) {
         $request->validate([
             'judul' => 'required|min:5',

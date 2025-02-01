@@ -6,12 +6,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('home', [
-        'articles' => Post::all(),
-    ]);
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // AUTH
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
@@ -26,6 +23,7 @@ Route::get('manageusers', [UserController::class, 'index'])->name('manageuser')-
 
 // ARTICLE
 Route::group(['prefix' => 'article', 'as' => 'article.', 'middleware' => ['checkadmin'] ], function () {
+    Route::get('show/{post}', [ArticleController::class, 'show'])->name('show');
     Route::get('create', [ArticleController::class, 'create'])->name('create');
     Route::get('manage', [ArticleController::class, 'manage'])->name('manage');
     Route::post('store', [ArticleController::class, 'store'])->name('store');
